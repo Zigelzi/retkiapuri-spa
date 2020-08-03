@@ -7,6 +7,7 @@
 <style lang="scss">
 #app {
   max-width: 920px;
-  margin: 50px auto;
+  width: 90%;
+  margin: var(--m-m) auto var(--m-xxl) auto;
 }
 </style>

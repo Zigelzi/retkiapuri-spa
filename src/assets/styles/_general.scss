@@ -1,3 +1,44 @@
 html {
     background-color: var(--primary-brown-500);
 }
+
+// Form and form controls
+.form-container {
+    background: var(--primary-gray);
+}
+
+.input-group {
+    padding-bottom: var(--p-m);
+}
+
+.form-input {
+    display: block;
+    border: none;
+}
+
+.form-label {
+    display: block;
+    padding-bottom: var(--p-s);
+}
+
+.form-submit {
+    background: var(--primary-green-500);
+    border: none;
+    padding: var(--p-s);
+    transition: transform, .2s ease-in;
+    transform-origin: bottom left;
+
+    &:hover {
+        transform: scale(105%);
+    }
+
+    &:active {
+        transform: scale(95%);
+    }
+}
+
+.input-short {
+    max-width: 75px;
+}
+
+// Buttons
