@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,700;0,900;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Raleway', Helvetica, sans-serif;
+    color: var(--primary-green-100)
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-blue-500);
+
+    transition: color, .25s;
+
+    &:hover {
+        color: var(--secondary-red);
+    }
+}
+
+.highlight-red {
+    color: var(--secondary-red);
+}
+
+.highlight-green {
+    color: var(--highlight-green);
+}
+
+.highlight-blue {
+    color: var(--secondary-blue-500);
+}
+
+.text-white {
+    color: white;
+}

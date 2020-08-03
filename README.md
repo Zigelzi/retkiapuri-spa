@@ -1,24 +1,15 @@
-# retkiapuri-spa
+# Retkiapuri
+Retkiapuri's purpose is to help hikers to find and browse hiking routes in Finland and prepare for their hikes better.
 
-## Project setup
-```
-yarn install
-```
+---
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## How to set up
+Retkiapuri consists of three parts currently
+* Retkiapuri (Main) - Docker-Composer for building all services independantly 
+* Retkiapuri SPA - Single-Page Application for front-end built with Vue
+* Retkiapuri API - Python (Flask) based backend API for managing the data
 
-### Compiles and minifies for production
-```
-yarn build
-```
+All three parts are needed to get the application running. Retkiapuri (Main) has the NGINX routing and build instructions for the services, and the SPA/API repositories are used to keep the backend/frontend development separate.
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## ToDo
+[ ] 
