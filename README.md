@@ -12,4 +12,11 @@ Retkiapuri consists of three parts currently
 All three parts are needed to get the application running. Retkiapuri (Main) has the NGINX routing and build instructions for the services, and the SPA/API repositories are used to keep the backend/frontend development separate.
 
 ## ToDo
-[ ] 
+- [ ] Add route
+- [ ] View all routes
+- [ ] View single route
+
+### Route information
+- Located in
+- Length
+- 
