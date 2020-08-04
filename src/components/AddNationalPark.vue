@@ -32,7 +32,7 @@
       />
     </div>
     <input
-      class="form-submit"
+      class="retki-btn"
       type="submit"
       value="Submit"
       @click.prevent="submitNationalPark"

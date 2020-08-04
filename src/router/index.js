@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import NationalParks from "../views/NationalParks.vue";
-import OneNationalPark from "../views/OneNationalPark.vue";
+import NationalParksView from "../views/NationalParksView.vue";
+import OneNationalParkView from "../views/OneNationalParkView.vue";
 
 Vue.use(VueRouter);
 
@@ -15,12 +15,12 @@ const routes = [
   {
     path: "/national_parks",
     name: "nationalParks",
-    component: NationalParks
+    component: NationalParksView
   },
   {
     path: "/national_park/:nationalParkId",
     name: "singleNationalPark",
-    component: OneNationalPark
+    component: OneNationalParkView
   }
 ];
 

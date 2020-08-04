@@ -2,7 +2,9 @@
   <div>
     <h1>National Parks</h1>
     <div>
-      <button @click="toggleAddParkVisibility">Add New</button>
+      <button class="retki-btn" @click="toggleAddParkVisibility">
+        Add New
+      </button>
       <div v-if="addParkFormVisible">
         <AddNationalPark />
       </div>

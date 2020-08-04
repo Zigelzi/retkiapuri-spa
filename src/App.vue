@@ -18,6 +18,6 @@
 #app {
   max-width: 920px;
   width: 90%;
-  margin: var(--m-m) auto var(--m-xxl) auto;
+  margin: var(--mg-m) auto var(--mg-xxl) auto;
 }
 </style>

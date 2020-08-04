@@ -22,7 +22,7 @@
       />
     </div>
     <input
-      class="form-submit"
+      class="retki-btn"
       type="submit"
       value="Submit"
       @click.prevent="submithikeRoute"
@@ -32,6 +32,9 @@
 <script>
 import axios from "axios";
 export default {
+  props: {
+    nationalParkId: [Number, String]
+  },
   data() {
     return {
       hikeRoute: {
@@ -43,7 +46,8 @@ export default {
   methods: {
     submithikeRoute() {
       const path = "/hike_route";
-      const hikeRoute = this.hikeRoute;
+      let hikeRoute = this.hikeRoute;
+      hikeRoute.national_park_id = this.nationalParkId;
 
       axios
         .post(path, hikeRoute)
