@@ -1,6 +1,16 @@
 <template>
   <div id="app">
-    <router-view />
+    <header>
+      <nav>
+        <router-link :to="{ name: 'Home' }">Home</router-link>
+        <router-link :to="{ name: 'nationalParks' }"
+          >National Parks</router-link
+        >
+      </nav>
+    </header>
+    <section>
+      <router-view />
+    </section>
   </div>
 </template>
 
