@@ -10,6 +10,11 @@
       </div>
     </div>
     <div>
+      <r-dropdown
+        inputName="sortType"
+        inputLabel="Sort"
+        :inputOptions="['A-Z', 'Z-A']"
+      />
       <div>
         <h2>Total number of national parks: {{ nationalParks.length }}</h2>
       </div>
@@ -26,11 +31,13 @@
 import axios from "axios";
 import NationalPark from "@/components/NationalPark";
 import AddNationalPark from "@/components/AddNationalPark";
+import Dropdown from "@/components/Dropdown";
 
 export default {
   components: {
     "r-national-park": NationalPark,
-    "r-add-national-park": AddNationalPark
+    "r-add-national-park": AddNationalPark,
+    "r-dropdown": Dropdown
   },
   data() {
     return {
