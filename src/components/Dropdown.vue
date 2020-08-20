@@ -108,13 +108,4 @@ export default {
   color: black;
   cursor: pointer;
 }
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.25s;
-}
 </style>
