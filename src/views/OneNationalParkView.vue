@@ -11,7 +11,7 @@
       </button>
     </div>
     <div v-if="showAddHikeRouteForm">
-      <AddRouteForm />
+      <r-add-route-form />
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ import AddRouteForm from "@/components/AddRouteForm";
 
 export default {
   components: {
-    AddRouteForm
+    "r-add-route-form": AddRouteForm
   },
   data() {
     return {

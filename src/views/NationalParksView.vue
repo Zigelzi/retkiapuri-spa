@@ -6,12 +6,15 @@
         Add New
       </button>
       <div v-if="addParkFormVisible">
-        <AddNationalPark />
+        <r-add-national-park />
       </div>
     </div>
     <div>
+      <div>
+        <h2>Total number of national parks: {{ nationalParks.length }}</h2>
+      </div>
       <div v-for="nationalPark in nationalParks" :key="nationalPark.id">
-        <NationalPark
+        <r-national-park
           :nationalPark="nationalPark"
           :userPosition="userPosition"
         />
@@ -26,8 +29,8 @@ import AddNationalPark from "@/components/AddNationalPark";
 
 export default {
   components: {
-    NationalPark,
-    AddNationalPark
+    "r-national-park": NationalPark,
+    "r-add-national-park": AddNationalPark
   },
   data() {
     return {

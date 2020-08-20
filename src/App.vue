@@ -1,12 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <nav>
-        <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'nationalParks' }"
-          >National Parks</router-link
-        >
-      </nav>
+      <r-nav />
     </header>
     <section>
       <router-view />
@@ -21,3 +16,11 @@
   margin: var(--mg-m) auto var(--mg-xxl) auto;
 }
 </style>
+<script>
+import Nav from "@/components/Nav";
+export default {
+  components: {
+    "r-nav": Nav
+  }
+};
+</script>
