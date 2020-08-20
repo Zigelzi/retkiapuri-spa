@@ -13,7 +13,8 @@
       <r-dropdown
         inputName="sortType"
         inputLabel="Sort"
-        :inputOptions="['A-Z', 'Z-A']"
+        :inputOptions="sortOptions"
+        @optionSelected="sortLocations"
       />
       <div>
         <h2>Total number of national parks: {{ nationalParks.length }}</h2>
@@ -47,7 +48,8 @@ export default {
         longitude: 0.0,
         latitude: 0.0
       },
-      distance: 0.0
+      distance: 0.0,
+      sortOptions: ["A-Z", "Z-A", "Closest first", "Furthest first"]
     };
   },
   methods: {
@@ -71,7 +73,9 @@ export default {
         console.log("Geolocation is not supported by your browser.");
       } else {
         navigator.geolocation.getCurrentPosition(
+          // Successfully get position
           this.updateUserPosition,
+          // Error on getting position
           this.logErrorMessage
         );
       }
@@ -83,7 +87,43 @@ export default {
     },
     logErrorMessage() {
       console.log("Unable to retrieve your location");
+    },
+    sortLocations(sortType) {
+      console.log(sortType);
+      if (sortType === "A-Z") {
+        this.nationalParks.sort(this.sortByNameAscending);
+      }
+      if (sortType === "Z-A") {
+        this.nationalParks.sort(this.sortByNameDescending);
+      }
+    },
+    sortByNameAscending(firstItem, secondItem) {
+      let nameA = firstItem.name.toLowerCase();
+      let nameB = secondItem.name.toLowerCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      return 0;
+    },
+    sortByNameDescending(firstItem, secondItem) {
+      let nameA = firstItem.name.toLowerCase();
+      let nameB = secondItem.name.toLowerCase();
+      if (nameA < nameB) {
+        return 1;
+      }
+      if (nameA > nameB) {
+        return -1;
+      }
+
+      return 0;
     }
+    // sortByDistanceAscending(firstItem, secondItem) {
+    //   // return a.
+    // }
   },
   created() {
     this.getNationalParks();

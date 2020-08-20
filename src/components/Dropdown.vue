@@ -56,7 +56,7 @@ export default {
   display: inline-block;
   margin: var(--mg-m) 0;
   position: relative;
-  width: 120px;
+  width: 180px;
 }
 
 .dropdown-label {
