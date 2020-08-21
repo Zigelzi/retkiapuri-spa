@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link :to="{ name: 'nationalParks' }">Back</router-link>
     <h1>{{ nationalPark.name }}</h1>
     <div>
       <p>Longitude: {{ nationalPark.longitude }}</p>
@@ -10,9 +11,15 @@
         Add Hike Route
       </button>
     </div>
-    <div v-if="showAddHikeRouteForm">
-      <r-add-route-form :nationalParkId="nationalParkId" />
-    </div>
+    <transition name="fade">
+      <div v-if="showAddHikeRouteForm">
+        <r-add-route-form
+          :nationalParkId="nationalParkId"
+          @hikeRouteAdded="getNationalPark"
+        />
+      </div>
+    </transition>
+
     <div>
       <r-hike-route
         v-for="route in nationalPark.routes"

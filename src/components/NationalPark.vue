@@ -3,13 +3,23 @@
     <h2 class="card-title">{{ nationalPark.name }}</h2>
     <div class="card-content">
       <p>Distance: {{ nationalPark.distance }} km</p>
+      <div class="route-mark-container">
+        <r-route-marker
+          v-for="route in nationalPark.routes"
+          :key="route.id"
+        ></r-route-marker>
+      </div>
     </div>
   </div>
 </template>
 <script>
+import RouteMarker from "@/components/RouteMarker";
 export default {
   props: {
     nationalPark: Object
+  },
+  components: {
+    "r-route-marker": RouteMarker
   },
   methods: {
     goToNationalPark() {
@@ -36,8 +46,7 @@ export default {
   font-size: var(--text-18);
 }
 
-.mini-img {
-  height: 100%;
-  max-width: 100%;
+.route-mark-container {
+  display: flex;
 }
 </style>
