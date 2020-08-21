@@ -15,6 +15,7 @@
           v-for="(option, index) in inputOptions"
           :key="index"
           @click="selectOption(option)"
+          :value="selectedValue"
         >
           {{ option }}
         </div>
@@ -46,7 +47,7 @@ export default {
     selectOption(option) {
       this.selectedValue = option;
       this.showOptions = false;
-      this.$emit("optionSelected", this.selectedValue);
+      this.$emit("input", this.selectedValue);
     }
   }
 };

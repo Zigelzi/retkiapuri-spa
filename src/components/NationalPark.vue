@@ -1,5 +1,5 @@
 <template>
-  <div class="national-park-card">
+  <div class="national-park-card" @click="goToNationalPark">
     <h2 class="card-title">{{ nationalPark.name }}</h2>
     <div class="card-content">
       <p>Distance: {{ nationalPark.distance }} km</p>
@@ -10,6 +10,16 @@
 export default {
   props: {
     nationalPark: Object
+  },
+  methods: {
+    goToNationalPark() {
+      this.$router.push({
+        name: "singleNationalPark",
+        params: {
+          nationalParkId: this.nationalPark.id
+        }
+      });
+    }
   }
 };
 </script>

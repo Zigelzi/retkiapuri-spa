@@ -11,17 +11,26 @@
       </button>
     </div>
     <div v-if="showAddHikeRouteForm">
-      <r-add-route-form />
+      <r-add-route-form :nationalParkId="nationalParkId" />
+    </div>
+    <div>
+      <r-hike-route
+        v-for="route in nationalPark.routes"
+        :key="route.id"
+        :hikeRoute="route"
+      />
     </div>
   </div>
 </template>
 <script>
 import axios from "axios";
 import AddRouteForm from "@/components/AddRouteForm";
+import HikeRoute from "@/components/HikeRoute";
 
 export default {
   components: {
-    "r-add-route-form": AddRouteForm
+    "r-add-route-form": AddRouteForm,
+    "r-hike-route": HikeRoute
   },
   data() {
     return {

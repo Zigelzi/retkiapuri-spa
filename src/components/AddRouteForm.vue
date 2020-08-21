@@ -21,6 +21,15 @@
         id=""
       />
     </div>
+    <div>
+      <r-dropdown
+        inputName="routeDifficulty"
+        inputLabel="Difficulty"
+        :inputOptions="routeDifficulties"
+        v-model="hikeRoute.difficulty"
+      />
+    </div>
+
     <input
       class="retki-btn"
       type="submit"
@@ -31,16 +40,22 @@
 </template>
 <script>
 import axios from "axios";
+import Dropdown from "@/components/Dropdown";
 export default {
   props: {
     nationalParkId: [Number, String]
+  },
+  components: {
+    "r-dropdown": Dropdown
   },
   data() {
     return {
       hikeRoute: {
         name: "",
-        length: 0
-      }
+        length: 0,
+        difficulty: ""
+      },
+      routeDifficulties: ["Easy", "Average", "Hard", "Very hard"]
     };
   },
   methods: {

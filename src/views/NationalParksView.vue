@@ -5,16 +5,18 @@
       <button class="retki-btn" @click="toggleAddParkVisibility">
         Add New
       </button>
-      <div v-if="addParkFormVisible">
-        <r-add-national-park />
-      </div>
+      <transition name="fade">
+        <div v-if="addParkFormVisible">
+          <r-add-national-park />
+        </div>
+      </transition>
     </div>
     <div>
       <r-dropdown
         inputName="sortType"
         inputLabel="Sort"
         :inputOptions="sortOptions"
-        @optionSelected="sortLocations"
+        @input="sortLocations"
       />
       <div>
         <h2>Total number of national parks: {{ nationalParks.length }}</h2>
